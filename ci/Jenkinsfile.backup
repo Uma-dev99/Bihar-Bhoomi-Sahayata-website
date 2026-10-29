@@ -1,0 +1,17 @@
+// Nightly production database backup. Create a Pipeline job "bbs-nightly-backup"
+// with Definition "Pipeline script from SCM", this repository, branch main,
+// and Script Path "ci/Jenkinsfile.backup". See docs/JENKINS.md section 7.
+pipeline {
+  agent any
+  triggers { cron('H 2 * * *') }
+  options { timestamps(); timeout(time: 30, unit: 'MINUTES') }
+  stages {
+    stage('Backup') {
+      steps {
+        withCredentials([string(credentialsId: 'supabase-production-url', variable: 'DATABASE_URL')]) {
+          sh 'scripts/backup-db.sh "$HOME/bbs-backups"'
+        }
+      }
+    }
+  }
+}

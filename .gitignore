@@ -1,0 +1,33 @@
+# Secrets - never commit real environment files
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+backend/staticfiles/
+backend/db.sqlite3
+backend/test-results.xml
+
+# Node / Vite
+node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/coverage/
+frontend/test-results.xml
+
+# Database dumps may contain customer data
+*.dump
+*.sql.gz
+backups/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

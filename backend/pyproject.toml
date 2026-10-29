@@ -1,0 +1,12 @@
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+extend-exclude = ["enquiries/migrations"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "DJ", "S"]
+ignore = ["S101"]  # assert is how pytest tests are written
+
+[tool.ruff.lint.per-file-ignores]
+"enquiries/tests.py" = ["S105", "S106"]
+"config/settings.py" = ["S105"]

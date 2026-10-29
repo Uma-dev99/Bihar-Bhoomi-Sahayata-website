@@ -1,0 +1,12 @@
+# NOT YET PINNED. These are compatible ranges; the build environment for this
+# project had no package-registry access, so exact tested versions could not be
+# recorded. Before the first production deploy run (inside the virtualenv):
+#   pip-compile requirements.in -o requirements.txt
+# and commit the result. See docs/DEVELOPMENT.md.
+Django>=5.2,<5.3
+djangorestframework>=3.16,<3.17
+psycopg[binary]>=3.2,<4
+django-cors-headers>=4.7,<5
+dj-database-url>=3.0,<4
+gunicorn>=23,<24
+whitenoise>=6.9,<7

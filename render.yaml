@@ -1,0 +1,73 @@
+# Render Blueprint for the Django API (staging + production).
+# Render -> New -> Blueprint -> pick this repository.
+# Secrets marked "sync: false" are typed into the Render dashboard, never committed.
+# Auto-deploy is OFF: Jenkins triggers deploys with each service's deploy hook
+# only after tests pass (and, for production, after manual approval).
+services:
+  - type: web
+    name: bbs-api-staging
+    runtime: python
+    plan: free            # sleeps after 15 idle minutes; fine for staging
+    region: singapore     # closest Render region to Bihar
+    branch: main
+    rootDir: backend
+    autoDeploy: false
+    buildCommand: ./build.sh
+    startCommand: ./start.sh
+    healthCheckPath: /api/health/
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.8"
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false       # Supabase STAGING project, session pooler URL
+      - key: DJANGO_ALLOWED_HOSTS
+        value: bbs-api-staging.onrender.com
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://staging.bbs-site.pages.dev
+      - key: CSRF_TRUSTED_ORIGINS
+        value: https://bbs-api-staging.onrender.com
+      - key: DRF_NUM_PROXIES
+        value: "1"
+      - key: DJANGO_ADMIN_PATH
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: "2"
+
+  - type: web
+    name: bbs-api
+    runtime: python
+    plan: starter         # paid (no sleeping). Use "free" only while testing.
+    region: singapore
+    branch: main
+    rootDir: backend
+    autoDeploy: false
+    buildCommand: ./build.sh
+    startCommand: ./start.sh
+    healthCheckPath: /api/health/
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.8"
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false       # Supabase PRODUCTION project, session pooler URL
+      - key: DJANGO_ALLOWED_HOSTS
+        value: bbs-api.onrender.com
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://bbs-site.pages.dev
+      - key: CSRF_TRUSTED_ORIGINS
+        value: https://bbs-api.onrender.com
+      - key: DRF_NUM_PROXIES
+        value: "1"
+      - key: DJANGO_ADMIN_PATH
+        sync: false
+      - key: DJANGO_HSTS_SECONDS
+        value: "3600"     # raise to 31536000 after a week of stable HTTPS
+      - key: WEB_CONCURRENCY
+        value: "2"

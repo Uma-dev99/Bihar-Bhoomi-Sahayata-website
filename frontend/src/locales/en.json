@@ -1,0 +1,329 @@
+{
+  "meta": {
+    "siteName": "Bihar Bhoomi Sahayata",
+    "home": {
+      "title": "Bihar Bhoomi Sahayata – Land record guidance in Gaya, Bihar",
+      "description": "Practical guidance on Jamabandi, Khata-Khesra, mutation paperwork and land-document discrepancies from a retired Senior UDC. Independent consultancy in Gaya, Bihar."
+    },
+    "services": {
+      "title": "Services and fees – Bihar Bhoomi Sahayata",
+      "description": "Consultation, Jamabandi review, mutation paperwork guidance and document discrepancy reports. Proposed fees, scope and limits explained clearly."
+    },
+    "about": {
+      "title": "About the consultant – Bihar Bhoomi Sahayata",
+      "description": "Bameshwaar Singh, retired Senior UDC from the Bihar government, offers independent guidance on Bihar land records."
+    },
+    "contact": {
+      "title": "Request a consultation – Bihar Bhoomi Sahayata",
+      "description": "Send your land-record question in Hindi or English. Based in Gaya, Bihar."
+    },
+    "privacy": {
+      "title": "Privacy notice – Bihar Bhoomi Sahayata",
+      "description": "What information the enquiry form collects, why, who can see it and how long it is kept."
+    },
+    "disclaimer": {
+      "title": "Disclaimer – Bihar Bhoomi Sahayata",
+      "description": "Bihar Bhoomi Sahayata is an independent consultancy, not a government service, and does not give legal advice."
+    },
+    "articles": {
+      "title": "Land record articles – Bihar Bhoomi Sahayata",
+      "description": "Plain-language articles on Bihar Jamabandi, mutation and land-record numbers."
+    },
+    "notFound": {
+      "title": "Page not found – Bihar Bhoomi Sahayata",
+      "description": "The page you were looking for could not be found."
+    }
+  },
+  "common": {
+    "skipToContent": "Skip to main content",
+    "loading": "Loading…",
+    "toBeAnnounced": "To be announced",
+    "readMore": "Read more",
+    "bookConsultation": "Request a consultation",
+    "independentNotice": "Independent consultancy. Not a government office and not affiliated with the Government of Bihar.",
+    "opensNewTab": "(opens in a new tab)"
+  },
+  "language": {
+    "label": "Language",
+    "switchTo": "Read this page in {{language}}",
+    "chooserTitle": "Choose your language",
+    "chooserText": "You can change it at any time from the top of the page.",
+    "chooserGroupLabel": "Language choice"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "home": "Home",
+    "services": "Services",
+    "articles": "Articles",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "disclaimer": "Disclaimer",
+    "menu": "Menu",
+    "closeMenu": "Close menu"
+  },
+  "home": {
+    "headline": "Understand your land records. Know your next step.",
+    "intro": "Practical guidance on Jamabandi, Khata-Khesra, mutation paperwork and land-document discrepancies.",
+    "heroNote": "From a retired Senior UDC of the Bihar government, now working as an independent consultant in Gaya.",
+    "secondaryCta": "See services and fees",
+    "servicesTitle": "How we can help",
+    "servicesIntro": "Clear, fixed starting fees. You know the cost before any work begins.",
+    "allServices": "All services and fees",
+    "whyTitle": "Why choose this consultancy",
+    "why": [
+      {
+        "title": "Experience with revenue records",
+        "text": "Guidance from someone who has worked in revenue administration in Bihar and understands how land records are kept."
+      },
+      {
+        "title": "In Hindi or English",
+        "text": "Explanations in the language you are comfortable with, for families in Bihar and those living elsewhere."
+      },
+      {
+        "title": "Fees stated upfront",
+        "text": "Each service has a stated fee and scope. Government charges and other professionals’ fees are always separate."
+      },
+      {
+        "title": "Honest about limits",
+        "text": "If your matter needs an advocate, a surveyor or the circle office, we tell you plainly instead of promising results."
+      }
+    ],
+    "bioTitle": "About the consultant",
+    "bioText": "Bameshwaar Singh is a retired Senior UDC from the Bihar government with experience in revenue administration and land records. He now helps landowners understand their papers and plan the right next step.",
+    "bioLink": "More about the consultant",
+    "processTitle": "How a consultation works",
+    "process": [
+      {
+        "title": "Send your question",
+        "text": "Use the enquiry form with a short description of your land-record problem."
+      },
+      {
+        "title": "We call you back",
+        "text": "We contact you on the number you give to understand the matter and confirm the service and fee."
+      },
+      {
+        "title": "Review and guidance",
+        "text": "We go through the records you share and explain what they show and what is missing."
+      },
+      {
+        "title": "Your next step",
+        "text": "You get clear direction on the next official or professional step to take."
+      }
+    ],
+    "articlesTitle": "Learn about land records",
+    "allArticles": "All articles",
+    "contactTitle": "Have a question about your land papers?",
+    "contactText": "Send an enquiry in Hindi or English. Based in Gaya, Bihar; guidance available for land anywhere in Bihar."
+  },
+  "services": {
+    "title": "Services and fees",
+    "intro": "Each service below has a defined scope, a clear deliverable and a stated fee. If you are unsure which one fits, start with an initial consultation.",
+    "feeLabel": "Fee",
+    "scopeLabel": "What is included",
+    "deliverableLabel": "What you receive",
+    "limitsLabel": "Limits",
+    "quote": "Quote after scope assessment",
+    "requestThis": "Request this service",
+    "feesNoteTitle": "About the fees",
+    "feesNote": [
+      "These are proposed starting fees and may be revised. The fee is confirmed with you before any work begins.",
+      "Fees do not include government fees, application or stamp charges, surveyor (amin) fees, advocate fees or travel costs.",
+      "We do not guarantee any official decision or outcome."
+    ],
+    "items": {
+      "consultation": {
+        "name": "Initial consultation (up to 20 minutes)",
+        "scope": "A phone or in-person discussion of your land-record question.",
+        "deliverable": "An explanation of your situation and a suggested next step.",
+        "limits": "No detailed document review or written report."
+      },
+      "jamabandi": {
+        "name": "Jamabandi and land-record review",
+        "scope": "Review of your Jamabandi and the related records you provide, such as khatiyan, deed and rent receipts.",
+        "deliverable": "An explanation of what the records show and any mismatches found.",
+        "limits": "Based only on the documents you share; not a title verification."
+      },
+      "mutation": {
+        "name": "Mutation paperwork guidance",
+        "scope": "Help to understand the mutation (dakhil-kharij) process and organise your documents for the application.",
+        "deliverable": "A document checklist for your case and guidance on the application steps.",
+        "limits": "You or your authorised representative submit the application. We cannot influence the decision."
+      },
+      "discrepancy": {
+        "name": "Document discrepancy report",
+        "scope": "A detailed comparison of names, numbers and areas across your land documents.",
+        "deliverable": "A written report listing each discrepancy and the likely route to correct it.",
+        "limits": "Not a legal opinion. Disputes over ownership need an advocate."
+      },
+      "survey": {
+        "name": "Land-survey document preparation",
+        "scope": "Help to organise documents needed for survey-related work.",
+        "deliverable": "Depends on your case; agreed in writing before work starts.",
+        "limits": "Does not include measurement or surveyor (amin) work."
+      },
+      "other": {
+        "name": "Other / not sure"
+      }
+    }
+  },
+  "about": {
+    "title": "About the consultant",
+    "name": "Bameshwaar Singh",
+    "role": "Retired Senior UDC, Government of Bihar",
+    "photoPlaceholder": "Photograph to be added",
+    "intro": "Bameshwaar Singh retired as a Senior Upper Division Clerk (UDC) from the Bihar government. His work involved revenue administration and land records.",
+    "independentTitle": "An independent consultancy",
+    "independentText": "Bihar Bhoomi Sahayata is a private, home-based consultancy in Gaya. It is not a government office, has no official authority, and cannot speed up or influence any government decision.",
+    "languagesTitle": "Languages",
+    "languagesText": "Consultations are available in Hindi and English.",
+    "approachTitle": "Our approach",
+    "approach": [
+      "Transparency: the fee and the scope of work are agreed before we begin.",
+      "Privacy: your details and documents are used only for your matter.",
+      "Clear guidance: plain explanations, and an honest answer when another professional is needed."
+    ]
+  },
+  "contact": {
+    "title": "Request a consultation",
+    "intro": "Tell us briefly about your land-record question. We will call you back to understand it and confirm the service and fee.",
+    "detailsTitle": "Contact details",
+    "location": "Location",
+    "locationValue": "Gaya, Bihar",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "whatsappLink": "Message on WhatsApp",
+    "email": "Email",
+    "hours": "Working hours",
+    "instructionsTitle": "Before you write",
+    "instructions": [
+      "Keep the mauza, thana number, khata, khesra and Jamabandi number handy if you know them.",
+      "Describe the problem in a few sentences. Do not send documents through this form.",
+      "Do not share Aadhaar numbers, bank details or passwords."
+    ]
+  },
+  "form": {
+    "title": "Enquiry form",
+    "requiredNote": "Fields marked * are required.",
+    "name": "Your name",
+    "phone": "Mobile number",
+    "phoneHint": "Indian mobile number, or international format starting with + (for example +44…).",
+    "preferredLanguage": "Language for the call back",
+    "serviceType": "Service",
+    "servicePlaceholder": "Choose a service",
+    "district": "District where the land is (optional)",
+    "districtPlaceholder": "Choose a district",
+    "districtNotSure": "Not sure / other",
+    "message": "Your question",
+    "messageHint": "Briefly describe the land-record problem.",
+    "characters": "{{count}} / {{max}} characters",
+    "privacyConsent": "I have read the privacy notice and agree that my details may be used to respond to this enquiry.",
+    "privacyLink": "Read the privacy notice",
+    "honeypot": "Leave this field empty",
+    "submit": "Send enquiry",
+    "submitting": "Sending…",
+    "slowServer": "Still sending – the server can take up to a minute to wake up. Please keep this page open.",
+    "successTitle": "Thank you – your enquiry has been received.",
+    "successText": "We will call you back on the number you gave. Calls are usually returned during working hours.",
+    "sendAnother": "Send another enquiry",
+    "errorSummary": "Please correct the highlighted fields.",
+    "errors": {
+      "required": "This field is required.",
+      "nameShort": "Please enter your full name.",
+      "nameLong": "Name must be at most 100 characters.",
+      "nameInvalid": "Please enter a real name.",
+      "phoneInvalid": "Please enter a valid mobile number.",
+      "messageShort": "Please describe your question in a little more detail (at least 10 characters).",
+      "messageLong": "Your question must be at most 2,000 characters.",
+      "invalidChoice": "Please choose an option from the list.",
+      "privacy": "Please accept the privacy notice to continue.",
+      "network": "Could not reach the server. Check your internet connection and try again.",
+      "timeout": "The server took too long to respond. Please try again.",
+      "rateLimited": "Too many enquiries were sent from this connection. Please wait a while and try again.",
+      "server": "Something went wrong on our side. Please try again later."
+    }
+  },
+  "privacy": {
+    "title": "Privacy notice",
+    "lastUpdated": "Last updated: {{date}}",
+    "sections": [
+      {
+        "heading": "What we collect",
+        "paragraphs": [
+          "When you send an enquiry we store: your name, mobile number, preferred language, the service you chose, the district (if you choose one) and your message.",
+          "To prevent misuse of the form, the server keeps a short-lived record linked to your internet (IP) address for rate limiting, for up to one day. Our hosting providers may keep their own technical logs under their policies."
+        ]
+      },
+      {
+        "heading": "Why we collect it",
+        "paragraphs": [
+          "Only to respond to your enquiry: to call you back, understand your question and offer a service. We do not sell your information or use it for advertising."
+        ]
+      },
+      {
+        "heading": "Who can see it",
+        "paragraphs": [
+          "The consultant, Bameshwaar Singh, through a password-protected administration page.",
+          "Your enquiry is stored with the companies that host this website and its database. They process it on our behalf to run the service."
+        ]
+      },
+      {
+        "heading": "How long we keep it",
+        "paragraphs": [
+          "Open enquiries are kept until they are dealt with. Closed enquiries are reviewed and deleted after about 12 months, unless we need them for an ongoing consultation."
+        ]
+      },
+      {
+        "heading": "Correction and deletion",
+        "paragraphs": [
+          "You can ask us to correct or delete your enquiry by contacting us using the details on the contact page. We will confirm once it is done."
+        ]
+      },
+      {
+        "heading": "What not to send",
+        "paragraphs": [
+          "Please do not send Aadhaar numbers, bank details, passwords or copies of documents through the enquiry form."
+        ]
+      },
+      {
+        "heading": "Language preference",
+        "paragraphs": [
+          "Your browser stores your language choice (Hindi or English) so the site opens in that language next time. This website does not use advertising or analytics cookies."
+        ]
+      }
+    ]
+  },
+  "disclaimer": {
+    "title": "Disclaimer",
+    "points": [
+      "Bihar Bhoomi Sahayata is an independent, private consultancy. It is not a government office, and it is not affiliated with or endorsed by the Government of Bihar or any of its departments.",
+      "We provide guidance on understanding land records and organising documents. This is not legal advice. For disputes or court matters, consult a qualified advocate.",
+      "We do not guarantee any official decision, timeline or outcome.",
+      "Our fees do not include government fees, stamp or application charges, surveyor fees or advocate fees.",
+      "Articles on this website are general information and may become out of date as rules and portals change. Always confirm the current procedure from official sources."
+    ]
+  },
+  "articles": {
+    "title": "Articles on Bihar land records",
+    "intro": "Plain-language explanations to help you understand your land papers before you take the next step.",
+    "lastReviewed": "Last updated: {{date}}",
+    "draftNotice": "Draft – this article is awaiting review by the consultant.",
+    "sourcesTitle": "Official resources",
+    "disclaimer": "This article is general information, not legal advice. Rules and portals change; confirm the current procedure from official sources before you act.",
+    "ctaTitle": "Need help with your own records?",
+    "ctaText": "Send a short enquiry and we will call you back.",
+    "back": "All articles",
+    "notFound": "This article could not be found."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you were looking for does not exist or has moved.",
+    "home": "Go to the home page"
+  },
+  "footer": {
+    "about": "Independent guidance on Bihar land records, from Gaya.",
+    "linksTitle": "Pages",
+    "legalTitle": "Information",
+    "copyright": "© {{year}} Bihar Bhoomi Sahayata"
+  }
+}

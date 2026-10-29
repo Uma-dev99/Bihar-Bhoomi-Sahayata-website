@@ -1,0 +1,15 @@
+# Local PostgreSQL for development (optional). Start: docker compose up -d
+# Then in backend/.env: DATABASE_URL=postgres://bbs:bbs@localhost:5432/bbs
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: bbs
+      POSTGRES_PASSWORD: bbs   # local development only
+      POSTGRES_DB: bbs
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
