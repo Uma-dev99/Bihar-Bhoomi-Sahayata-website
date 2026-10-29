@@ -28,7 +28,10 @@ describe('routing', () => {
     renderApp(`/${lang}/articles/${article.slug}/`);
     expect(screen.getByRole('heading', { level: 1, name: article[lang].title })).toBeInTheDocument();
     for (const source of article.sources) {
-      expect(screen.getByRole('link', { name: new RegExp(source.label[lang].slice(0, 12)) })).toHaveAttribute(
+      // Match the whole label from the start: one source label can contain another's
+      // opening words (e.g. "Revenue and Land Reforms Department" inside "Bihar Bhumi portal (...)").
+      const label = source.label[lang].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      expect(screen.getByRole('link', { name: new RegExp(`^${label}`) })).toHaveAttribute(
         'href',
         source.url,
       );
