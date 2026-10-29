@@ -73,7 +73,9 @@ export function headTags(meta) {
   if (meta.canonical) {
     tags.push(`<link rel="canonical" href="${escapeHtml(meta.canonical)}" />`);
     for (const alt of meta.alternates) {
-      tags.push(`<link rel="alternate" hreflang="${alt.hreflang}" href="${escapeHtml(alt.href)}" />`);
+      tags.push(
+        `<link rel="alternate" hreflang="${alt.hreflang}" href="${escapeHtml(alt.href)}" />`,
+      );
     }
     tags.push(
       `<meta property="og:title" content="${escapeHtml(meta.title)}" />`,
@@ -101,7 +103,9 @@ export function applyMeta(meta, doc = document) {
   doc.title = meta.title;
   doc.documentElement.lang = meta.lang;
   setMeta(doc, 'meta[name="description"]', { name: 'description', content: meta.description });
-  doc.head.querySelectorAll('link[rel="alternate"][hreflang], meta[name="robots"]').forEach((el) => el.remove());
+  doc.head
+    .querySelectorAll('link[rel="alternate"][hreflang], meta[name="robots"]')
+    .forEach((el) => el.remove());
   const canonical = doc.head.querySelector('link[rel="canonical"]');
   if (meta.canonical) {
     setMeta(doc, 'link[rel="canonical"]', { rel: 'canonical', href: meta.canonical });
@@ -113,7 +117,10 @@ export function applyMeta(meta, doc = document) {
       doc.head.appendChild(link);
     }
     setMeta(doc, 'meta[property="og:title"]', { property: 'og:title', content: meta.title });
-    setMeta(doc, 'meta[property="og:description"]', { property: 'og:description', content: meta.description });
+    setMeta(doc, 'meta[property="og:description"]', {
+      property: 'og:description',
+      content: meta.description,
+    });
     setMeta(doc, 'meta[property="og:url"]', { property: 'og:url', content: meta.canonical });
     setMeta(doc, 'meta[property="og:locale"]', { property: 'og:locale', content: meta.locale });
   } else {

@@ -52,7 +52,10 @@ for (const url of paths) {
 const entries = paths.map((url) => {
   const alternates = byPage
     .get(url.replace(/^\/(hi|en)\//, '/'))
-    .map((alt) => `    <xhtml:link rel="alternate" hreflang="${alt.split('/')[1]}" href="${SITE_URL}${alt}"/>`)
+    .map(
+      (alt) =>
+        `    <xhtml:link rel="alternate" hreflang="${alt.split('/')[1]}" href="${SITE_URL}${alt}"/>`,
+    )
     .join('\n');
   const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}${url.replace(/^\/en\//, '/hi/')}"/>`;
   return `  <url>\n    <loc>${SITE_URL}${url}</loc>\n    <lastmod>${today}</lastmod>\n${alternates}\n${xDefault}\n  </url>`;
@@ -83,4 +86,6 @@ write(
   `/*\n  Content-Security-Policy: ${csp}\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n\n/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n`,
 );
 
-console.log(`Prerendered ${paths.length} pages plus /, 404, sitemap.xml and robots.txt for ${SITE_URL}`);
+console.log(
+  `Prerendered ${paths.length} pages plus /, 404, sitemap.xml and robots.txt for ${SITE_URL}`,
+);

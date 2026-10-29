@@ -318,7 +318,9 @@ def test_health_check(client):
 @pytest.mark.django_db
 def test_purge_only_deletes_old_closed_enquiries():
     old = timezone.now() - timedelta(days=400)
-    keep_open = Enquiry.objects.create(name="A", phone="+919000000001", service_type="other", message="x" * 10)
+    keep_open = Enquiry.objects.create(
+        name="A", phone="+919000000001", service_type="other", message="x" * 10
+    )
     old_closed = Enquiry.objects.create(
         name="B", phone="+919000000002", service_type="other", message="x" * 10, status="closed"
     )

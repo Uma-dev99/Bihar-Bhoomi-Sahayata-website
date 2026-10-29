@@ -102,7 +102,9 @@ class EnquiryCreateSerializer(serializers.ModelSerializer):
         if len(value) < NAME_MIN:
             raise serializers.ValidationError("Name is too short.", code="min_length")
         if len(value) > NAME_MAX:
-            raise serializers.ValidationError(f"Name must be at most {NAME_MAX} characters.", code="max_length")
+            raise serializers.ValidationError(
+                f"Name must be at most {NAME_MAX} characters.", code="max_length"
+            )
         if not any(ch.isalpha() for ch in value):
             raise serializers.ValidationError("Enter a real name.", code="invalid")
         return value
@@ -120,7 +122,9 @@ class EnquiryCreateSerializer(serializers.ModelSerializer):
         if not value:
             raise serializers.ValidationError("Message is required.", code="blank")
         if len(value) < MESSAGE_MIN:
-            raise serializers.ValidationError("Please describe your question in a little more detail.", code="min_length")
+            raise serializers.ValidationError(
+                "Please describe your question in a little more detail.", code="min_length"
+            )
         if len(value) > MESSAGE_MAX:
             raise serializers.ValidationError(
                 f"Message must be at most {MESSAGE_MAX} characters.", code="max_length"

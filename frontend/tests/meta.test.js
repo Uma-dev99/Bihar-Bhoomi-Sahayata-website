@@ -17,7 +17,9 @@ describe('SEO metadata', () => {
       expect(meta.canonical.endsWith(path)).toBe(true);
       const hrefs = Object.fromEntries(meta.alternates.map((a) => [a.hreflang, a.href]));
       expect(Object.keys(hrefs).sort()).toEqual(['en', 'hi', 'x-default']);
-      const other = path.startsWith('/hi/') ? path.replace('/hi/', '/en/') : path.replace('/en/', '/hi/');
+      const other = path.startsWith('/hi/')
+        ? path.replace('/hi/', '/en/')
+        : path.replace('/en/', '/hi/');
       const otherMeta = resolveMeta(other);
       expect(hrefs[otherMeta.lang]).toBe(otherMeta.canonical);
       expect(otherMeta.alternates.find((a) => a.hreflang === meta.lang).href).toBe(meta.canonical);

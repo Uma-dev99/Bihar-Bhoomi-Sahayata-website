@@ -44,7 +44,11 @@ export default function Header() {
           </button>
         </div>
 
-        <nav id={menuId} className={open ? 'main-nav is-open' : 'main-nav'} aria-label={t('nav.label')}>
+        <nav
+          id={menuId}
+          className={open ? 'main-nav is-open' : 'main-nav'}
+          aria-label={t('nav.label')}
+        >
           <ul className="main-nav__list">
             {NAV_ITEMS.map((page) => (
               <li key={page}>

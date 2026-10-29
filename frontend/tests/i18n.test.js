@@ -69,7 +69,8 @@ describe('translations', () => {
       expect(article.hi.body.length).toBe(article.en.body.length);
       expect(article.hi.title).toMatch(DEVANAGARI);
       expect(article.sources.length).toBeGreaterThan(0);
-      for (const source of article.sources) expect(source.url).toMatch(/^https:\/\/[\w.-]+\.gov\.in\//);
+      for (const source of article.sources)
+        expect(source.url).toMatch(/^https:\/\/[\w.-]+\.gov\.in\//);
       expect(article.lastReviewed).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     }
   });

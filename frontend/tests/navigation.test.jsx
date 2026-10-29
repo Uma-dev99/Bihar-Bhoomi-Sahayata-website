@@ -24,9 +24,16 @@ describe('routing', () => {
     expect(screen.getByRole('heading', { level: 1, name: heading })).toBeInTheDocument();
   });
 
-  it.each(articles.flatMap((a) => [['hi', a], ['en', a]]))('article in %s renders', (lang, article) => {
+  it.each(
+    articles.flatMap((a) => [
+      ['hi', a],
+      ['en', a],
+    ]),
+  )('article in %s renders', (lang, article) => {
     renderApp(`/${lang}/articles/${article.slug}/`);
-    expect(screen.getByRole('heading', { level: 1, name: article[lang].title })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { level: 1, name: article[lang].title }),
+    ).toBeInTheDocument();
     for (const source of article.sources) {
       // Match the whole label from the start: one source label can contain another's
       // opening words (e.g. "Revenue and Land Reforms Department" inside "Bihar Bhumi portal (...)").
@@ -59,8 +66,13 @@ describe('routing', () => {
     const nav = screen.getByRole('navigation', { name: 'Main navigation' });
     await user.click(within(nav).getByRole('link', { name: 'Services' }));
     expect(location().pathname).toBe('/en/services/');
-    expect(screen.getByRole('heading', { level: 1, name: 'Services and fees' })).toBeInTheDocument();
-    expect(within(nav).getByRole('link', { name: 'Services' })).toHaveAttribute('aria-current', 'page');
+    expect(
+      screen.getByRole('heading', { level: 1, name: 'Services and fees' }),
+    ).toBeInTheDocument();
+    expect(within(nav).getByRole('link', { name: 'Services' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
   });
 
   it('home page contains every required section', () => {
@@ -81,7 +93,9 @@ describe('routing', () => {
   it('"Request this service" pre-selects the service on the contact form', async () => {
     window.localStorage.setItem(STORAGE_KEY, 'en');
     const { user, location } = renderApp('/en/services/');
-    const card = screen.getByRole('heading', { name: 'Mutation paperwork guidance' }).closest('article');
+    const card = screen
+      .getByRole('heading', { name: 'Mutation paperwork guidance' })
+      .closest('article');
     await user.click(within(card).getByRole('link', { name: 'Request this service' }));
     expect(location().pathname).toBe('/en/contact/');
     expect(screen.getByLabelText(/^Service/)).toHaveValue('mutation');
@@ -116,7 +130,10 @@ describe('keyboard accessibility', () => {
     expect(button).toHaveAttribute('aria-expanded', 'false');
     button.focus();
     await user.keyboard('{Enter}');
-    expect(screen.getByRole('button', { name: 'Close menu' })).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByRole('button', { name: 'Close menu' })).toHaveAttribute(
+      'aria-expanded',
+      'true',
+    );
     await user.keyboard('{Escape}');
     expect(screen.getByRole('button', { name: 'Menu' })).toHaveAttribute('aria-expanded', 'false');
   });

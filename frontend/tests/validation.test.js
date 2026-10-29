@@ -33,7 +33,9 @@ describe('client validation (mirrors the Django serializer)', () => {
   });
 
   it('rejects invalid choices', () => {
-    expect(validateEnquiry({ ...valid, preferred_language: 'fr' }).preferred_language).toBe('invalidChoice');
+    expect(validateEnquiry({ ...valid, preferred_language: 'fr' }).preferred_language).toBe(
+      'invalidChoice',
+    );
     expect(validateEnquiry({ ...valid, service_type: 'legal' }).service_type).toBe('invalidChoice');
     expect(validateEnquiry({ ...valid, district: 'atlantis' }).district).toBe('invalidChoice');
   });
@@ -44,7 +46,17 @@ describe('client validation (mirrors the Django serializer)', () => {
 
   it('maps server codes to translation keys', () => {
     expect(
-      mapServerErrors({ name: ['blank'], message: ['max_length'], service_type: ['invalid_choice'], privacy_accepted: ['required'] }),
-    ).toEqual({ name: 'required', message: 'messageLong', service_type: 'invalidChoice', privacy_accepted: 'privacy' });
+      mapServerErrors({
+        name: ['blank'],
+        message: ['max_length'],
+        service_type: ['invalid_choice'],
+        privacy_accepted: ['required'],
+      }),
+    ).toEqual({
+      name: 'required',
+      message: 'messageLong',
+      service_type: 'invalidChoice',
+      privacy_accepted: 'privacy',
+    });
   });
 });

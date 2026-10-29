@@ -17,7 +17,10 @@ export class EnquiryError extends Error {
 }
 
 /** Send an enquiry to the Django API. Resolves on success, throws EnquiryError otherwise. */
-export async function submitEnquiry(data, { timeoutMs = REQUEST_TIMEOUT_MS, fetchImpl = fetch } = {}) {
+export async function submitEnquiry(
+  data,
+  { timeoutMs = REQUEST_TIMEOUT_MS, fetchImpl = fetch } = {},
+) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
 

@@ -30,7 +30,9 @@ export default function Home() {
 
       <section className="section" aria-labelledby="home-services">
         <div className="container">
-          <h2 id="home-services" className="section__title">{t('home.servicesTitle')}</h2>
+          <h2 id="home-services" className="section__title">
+            {t('home.servicesTitle')}
+          </h2>
           <p className="section__intro">{t('home.servicesIntro')}</p>
           <div className="card-grid">
             {services.map((service) => (
@@ -45,7 +47,9 @@ export default function Home() {
 
       <section className="section section--tinted" aria-labelledby="home-why">
         <div className="container">
-          <h2 id="home-why" className="section__title">{t('home.whyTitle')}</h2>
+          <h2 id="home-why" className="section__title">
+            {t('home.whyTitle')}
+          </h2>
           <ul className="feature-list">
             {why.map((item) => (
               <li key={item.title} className="feature">
@@ -63,7 +67,9 @@ export default function Home() {
             <span>{t('about.name').slice(0, 1)}</span>
           </div>
           <div>
-            <h2 id="home-bio" className="section__title">{t('home.bioTitle')}</h2>
+            <h2 id="home-bio" className="section__title">
+              {t('home.bioTitle')}
+            </h2>
             <p>{t('home.bioText')}</p>
             <p>
               <LangLink page="about">{t('home.bioLink')} →</LangLink>
@@ -74,7 +80,9 @@ export default function Home() {
 
       <section className="section section--tinted" aria-labelledby="home-process">
         <div className="container">
-          <h2 id="home-process" className="section__title">{t('home.processTitle')}</h2>
+          <h2 id="home-process" className="section__title">
+            {t('home.processTitle')}
+          </h2>
           <ol className="steps">
             {steps.map((step) => (
               <li key={step.title} className="steps__item">
@@ -88,7 +96,9 @@ export default function Home() {
 
       <section className="section" aria-labelledby="home-articles">
         <div className="container">
-          <h2 id="home-articles" className="section__title">{t('home.articlesTitle')}</h2>
+          <h2 id="home-articles" className="section__title">
+            {t('home.articlesTitle')}
+          </h2>
           <div className="card-grid">
             {articles.map((article) => (
               <ArticleCard key={article.slug} article={article} />
@@ -103,7 +113,9 @@ export default function Home() {
       <section className="section cta-band" aria-labelledby="home-contact">
         <div className="container cta-band__inner">
           <div>
-            <h2 id="home-contact" className="section__title">{t('home.contactTitle')}</h2>
+            <h2 id="home-contact" className="section__title">
+              {t('home.contactTitle')}
+            </h2>
             <p>{t('home.contactText')}</p>
           </div>
           <LangLink page="contact" className="button button--light button--large">

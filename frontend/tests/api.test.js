@@ -6,12 +6,18 @@ const response = (status, body) =>
 
 describe('submitEnquiry', () => {
   it('resolves on 201', async () => {
-    await expect(submitEnquiry({}, { fetchImpl: () => response(201, { ok: true }) })).resolves.toEqual({ ok: true });
+    await expect(
+      submitEnquiry({}, { fetchImpl: () => response(201, { ok: true }) }),
+    ).resolves.toEqual({ ok: true });
   });
 
   it('turns validation errors into field codes', async () => {
     const fetchImpl = () =>
-      response(400, { ok: false, error: 'validation_error', fields: { name: [{ code: 'blank', message: 'x' }] } });
+      response(400, {
+        ok: false,
+        error: 'validation_error',
+        fields: { name: [{ code: 'blank', message: 'x' }] },
+      });
     const error = await submitEnquiry({}, { fetchImpl }).catch((e) => e);
     expect(error).toBeInstanceOf(EnquiryError);
     expect(error.kind).toBe('validation');
@@ -23,14 +29,17 @@ describe('submitEnquiry', () => {
     [503, { error: 'service_unavailable' }, 'server'],
     [500, undefined, 'server'],
   ])('status %s -> %s', async (status, body, kind) => {
-    const error = await submitEnquiry({}, { fetchImpl: () => response(status, body) }).catch((e) => e);
+    const error = await submitEnquiry({}, { fetchImpl: () => response(status, body) }).catch(
+      (e) => e,
+    );
     expect(error.kind).toBe(kind);
   });
 
   it('reports network failures', async () => {
-    const error = await submitEnquiry({}, { fetchImpl: () => Promise.reject(new TypeError('offline')) }).catch(
-      (e) => e,
-    );
+    const error = await submitEnquiry(
+      {},
+      { fetchImpl: () => Promise.reject(new TypeError('offline')) },
+    ).catch((e) => e);
     expect(error.kind).toBe('network');
   });
 

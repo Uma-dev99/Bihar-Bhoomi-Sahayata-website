@@ -28,12 +28,19 @@ export default function Contact() {
               <dt>{t('contact.location')}</dt>
               <dd>{t('contact.locationValue')}</dd>
               <dt>{t('contact.phone')}</dt>
-              <dd>{business.phone ? <a href={`tel:${business.phone}`}>{business.phone}</a> : tba}</dd>
+              <dd>
+                {business.phone ? <a href={`tel:${business.phone}`}>{business.phone}</a> : tba}
+              </dd>
               <dt>{t('contact.whatsapp')}</dt>
               <dd>
                 {business.whatsapp ? (
-                  <a href={`https://wa.me/${business.whatsapp}`} target="_blank" rel="noopener noreferrer">
-                    {t('contact.whatsappLink')} <span className="visually-hidden">{t('common.opensNewTab')}</span>
+                  <a
+                    href={`https://wa.me/${business.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t('contact.whatsappLink')}{' '}
+                    <span className="visually-hidden">{t('common.opensNewTab')}</span>
                   </a>
                 ) : (
                   tba
@@ -62,7 +69,8 @@ export default function Contact() {
           </section>
 
           <p className="notice notice--small">
-            {t('common.independentNotice')} <LangLink page="disclaimer">{t('nav.disclaimer')}</LangLink>
+            {t('common.independentNotice')}{' '}
+            <LangLink page="disclaimer">{t('nav.disclaimer')}</LangLink>
             {' · '}
             <LangLink page="privacy">{t('nav.privacy')}</LangLink>
           </p>

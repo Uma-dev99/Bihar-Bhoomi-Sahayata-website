@@ -47,7 +47,11 @@ export default function LanguageChooser() {
           </h2>
           <p className="lang-chooser__text">{t('language.chooserText')}</p>
         </div>
-        <div className="lang-chooser__buttons" role="group" aria-label={t('language.chooserGroupLabel')}>
+        <div
+          className="lang-chooser__buttons"
+          role="group"
+          aria-label={t('language.chooserGroupLabel')}
+        >
           {LANGUAGES.map((code) => (
             <button
               key={code}

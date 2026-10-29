@@ -58,20 +58,30 @@ describe('language behaviour', () => {
     const switcher = screen.getByRole('navigation', { name: 'भाषा' });
     await user.click(within(switcher).getByRole('link', { name: 'English' }));
 
-    expect(await screen.findByRole('heading', { level: 1, name: 'Services and fees' })).toBeInTheDocument();
+    expect(
+      await screen.findByRole('heading', { level: 1, name: 'Services and fees' }),
+    ).toBeInTheDocument();
     expect(location().pathname).toBe('/en/services/');
     expect(window.localStorage.getItem(STORAGE_KEY)).toBe('en');
     await waitFor(() => expect(document.documentElement.lang).toBe('en'));
     expect(document.title).toBe('Services and fees – Bihar Bhoomi Sahayata');
     // No Hindi interface text left behind in the navigation.
-    expect(screen.getByRole('navigation', { name: 'Main navigation' })).toHaveTextContent('Services');
+    expect(screen.getByRole('navigation', { name: 'Main navigation' })).toHaveTextContent(
+      'Services',
+    );
   });
 
   it('marks the current language in the switcher', () => {
     renderApp('/en/about/');
     const switcher = screen.getByRole('navigation', { name: 'Language' });
-    expect(within(switcher).getByRole('link', { name: 'English' })).toHaveAttribute('aria-current', 'true');
-    expect(within(switcher).getByRole('link', { name: 'हिन्दी' })).toHaveAttribute('href', '/hi/about/');
+    expect(within(switcher).getByRole('link', { name: 'English' })).toHaveAttribute(
+      'aria-current',
+      'true',
+    );
+    expect(within(switcher).getByRole('link', { name: 'हिन्दी' })).toHaveAttribute(
+      'href',
+      '/hi/about/',
+    );
   });
 
   it('builds the other-language path correctly', () => {

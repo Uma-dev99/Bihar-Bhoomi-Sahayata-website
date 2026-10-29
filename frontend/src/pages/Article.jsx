@@ -46,7 +46,9 @@ export default function Article() {
       <p className="article__meta">
         {t('articles.lastReviewed', { date: formatDate(article.lastReviewed, lang) })}
       </p>
-      {!article.ownerReviewed && <p className="notice notice--warning">{t('articles.draftNotice')}</p>}
+      {!article.ownerReviewed && (
+        <p className="notice notice--warning">{t('articles.draftNotice')}</p>
+      )}
       <p className="page__intro">{text.description}</p>
 
       {text.body.map((block, index) => (

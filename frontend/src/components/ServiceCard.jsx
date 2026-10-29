@@ -14,7 +14,11 @@ export default function ServiceCard({ service, detailed = false, headingLevel = 
   return (
     <article className="service-card">
       <Heading className="service-card__title">{t(`${key}.name`)}</Heading>
-      <p className={service.fee == null ? 'service-card__fee service-card__fee--quote' : 'service-card__fee'}>
+      <p
+        className={
+          service.fee == null ? 'service-card__fee service-card__fee--quote' : 'service-card__fee'
+        }
+      >
         <span className="visually-hidden">{t('services.feeLabel')}: </span>
         {fee}
       </p>
@@ -31,7 +35,11 @@ export default function ServiceCard({ service, detailed = false, headingLevel = 
         <p className="service-card__summary">{t(`${key}.scope`)}</p>
       )}
       {detailed && (
-        <LangLink page="contact" search={`?service=${service.id}`} className="button button--secondary">
+        <LangLink
+          page="contact"
+          search={`?service=${service.id}`}
+          className="button button--secondary"
+        >
           {t('services.requestThis')}
         </LangLink>
       )}

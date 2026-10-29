@@ -18,7 +18,9 @@ export default function Services() {
       </div>
 
       <aside className="notice" aria-labelledby="fees-note">
-        <h2 id="fees-note" className="notice__title">{t('services.feesNoteTitle')}</h2>
+        <h2 id="fees-note" className="notice__title">
+          {t('services.feesNoteTitle')}
+        </h2>
         <ul>
           {notes.map((note) => (
             <li key={note}>{note}</li>

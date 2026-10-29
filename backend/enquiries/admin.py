@@ -28,8 +28,16 @@ class EnquiryAdmin(admin.ModelAdmin):
         # What the customer submitted is kept as submitted; only the status changes.
         if obj is None:
             return ("created_at", "contact_links")
-        return ("created_at", "contact_links", "name", "phone", "preferred_language", "district",
-                "service_type", "message")
+        return (
+            "created_at",
+            "contact_links",
+            "name",
+            "phone",
+            "preferred_language",
+            "district",
+            "service_type",
+            "message",
+        )
 
     @admin.display(description="Call / WhatsApp")
     def contact_links(self, obj):

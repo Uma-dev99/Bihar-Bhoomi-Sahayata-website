@@ -10,7 +10,15 @@ import { LIMITS, mapServerErrors, validateEnquiry } from '../utils/validation';
 import LangLink from './LangLink';
 import LoadingState from './LoadingState';
 
-const FIELD_ORDER = ['name', 'phone', 'service_type', 'district', 'preferred_language', 'message', 'privacy_accepted'];
+const FIELD_ORDER = [
+  'name',
+  'phone',
+  'service_type',
+  'district',
+  'preferred_language',
+  'message',
+  'privacy_accepted',
+];
 const SLOW_NOTICE_MS = 6000;
 
 function initialValues(lang, service) {
@@ -95,12 +103,16 @@ export default function EnquiryForm({ submit = submitEnquiry }) {
       const kind = error instanceof EnquiryError ? error.kind : 'server';
       if (kind === 'validation') {
         const mapped = mapServerErrors(error.fields);
-        const known = Object.fromEntries(Object.entries(mapped).filter(([k]) => FIELD_ORDER.includes(k)));
+        const known = Object.fromEntries(
+          Object.entries(mapped).filter(([k]) => FIELD_ORDER.includes(k)),
+        );
         setErrors(known);
         if (Object.keys(known).length) focusFirstError(known);
         else setGeneralError('server');
       } else {
-        setGeneralError({ rate_limited: 'rateLimited', network: 'network', timeout: 'timeout' }[kind] ?? 'server');
+        setGeneralError(
+          { rate_limited: 'rateLimited', network: 'network', timeout: 'timeout' }[kind] ?? 'server',
+        );
       }
     }
   };
@@ -110,7 +122,11 @@ export default function EnquiryForm({ submit = submitEnquiry }) {
       <div className="form-result form-result--success" role="status" tabIndex={-1} ref={resultRef}>
         <h3>{t('form.successTitle')}</h3>
         <p>{t('form.successText')}</p>
-        <button type="button" className="button button--secondary" onClick={() => setStatus('idle')}>
+        <button
+          type="button"
+          className="button button--secondary"
+          onClick={() => setStatus('idle')}
+        >
           {t('form.sendAnother')}
         </button>
       </div>
@@ -121,7 +137,8 @@ export default function EnquiryForm({ submit = submitEnquiry }) {
   const errorCount = Object.keys(errors).length;
 
   const describedBy = (name, hint) =>
-    [hint && id(`${name}-hint`), errors[name] && id(`${name}-error`)].filter(Boolean).join(' ') || undefined;
+    [hint && id(`${name}-hint`), errors[name] && id(`${name}-error`)].filter(Boolean).join(' ') ||
+    undefined;
 
   const fieldError = (name) =>
     errors[name] ? (
@@ -139,7 +156,13 @@ export default function EnquiryForm({ submit = submitEnquiry }) {
   });
 
   return (
-    <form ref={formRef} className="enquiry-form" onSubmit={handleSubmit} noValidate aria-busy={submitting}>
+    <form
+      ref={formRef}
+      className="enquiry-form"
+      onSubmit={handleSubmit}
+      noValidate
+      aria-busy={submitting}
+    >
       <p className="enquiry-form__required">{t('form.requiredNote')}</p>
 
       {errorCount > 0 && (
@@ -194,7 +217,12 @@ export default function EnquiryForm({ submit = submitEnquiry }) {
           <label htmlFor={id('service_type')}>
             {t('form.serviceType')} <span aria-hidden="true">*</span>
           </label>
-          <select {...common('service_type')} value={values.service_type} onChange={update('service_type')} required>
+          <select
+            {...common('service_type')}
+            value={values.service_type}
+            onChange={update('service_type')}
+            required
+          >
             <option value="">{t('form.servicePlaceholder')}</option>
             {serviceTypeOptions.map((service) => (
               <option key={service} value={service}>
@@ -292,7 +320,11 @@ export default function EnquiryForm({ submit = submitEnquiry }) {
       </div>
 
       <div className="enquiry-form__actions">
-        <button type="submit" className="button button--primary button--large" disabled={submitting}>
+        <button
+          type="submit"
+          className="button button--primary button--large"
+          disabled={submitting}
+        >
           {submitting ? t('form.submitting') : t('form.submit')}
         </button>
         {submitting && <LoadingState label={slow ? t('form.slowServer') : t('form.submitting')} />}

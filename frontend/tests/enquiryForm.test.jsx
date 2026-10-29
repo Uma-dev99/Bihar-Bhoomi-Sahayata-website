@@ -8,7 +8,10 @@ async function fillValidForm(user) {
   await user.type(screen.getByLabelText(/^Mobile number/), '9000000000');
   await user.selectOptions(screen.getByLabelText(/^Service/), 'jamabandi');
   await user.selectOptions(screen.getByLabelText(/^District/), 'gaya');
-  await user.type(screen.getByLabelText(/^Your question/), 'I need guidance about a land-record entry.');
+  await user.type(
+    screen.getByLabelText(/^Your question/),
+    'I need guidance about a land-record entry.',
+  );
   await user.click(screen.getByLabelText(/I have read the privacy notice/));
 }
 
@@ -79,7 +82,9 @@ describe('enquiry form', () => {
     });
 
     resolve(await jsonResponse(201, { ok: true }));
-    expect(await screen.findByText('Thank you – your enquiry has been received.')).toBeInTheDocument();
+    expect(
+      await screen.findByText('Thank you – your enquiry has been received.'),
+    ).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: 'Send another enquiry' }));
     expect(screen.getByLabelText(/^Your name/)).toHaveValue('');
   });
@@ -103,7 +108,10 @@ describe('enquiry form', () => {
   });
 
   it('explains when the server is unreachable', async () => {
-    vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new TypeError('Failed to fetch'))));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() => Promise.reject(new TypeError('Failed to fetch'))),
+    );
     const { user } = setup();
     await fillValidForm(user);
     await user.click(screen.getByRole('button', { name: 'Send enquiry' }));
@@ -113,7 +121,10 @@ describe('enquiry form', () => {
   });
 
   it('explains rate limiting', async () => {
-    vi.stubGlobal('fetch', vi.fn(() => jsonResponse(429, { ok: false, error: 'rate_limited' })));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() => jsonResponse(429, { ok: false, error: 'rate_limited' })),
+    );
     const { user } = setup();
     await fillValidForm(user);
     await user.click(screen.getByRole('button', { name: 'Send enquiry' }));
@@ -121,7 +132,10 @@ describe('enquiry form', () => {
   });
 
   it('shows a generic error for server failures', async () => {
-    vi.stubGlobal('fetch', vi.fn(() => Promise.resolve(new Response('<h1>502</h1>', { status: 502 }))));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() => Promise.resolve(new Response('<h1>502</h1>', { status: 502 }))),
+    );
     const { user } = setup();
     await fillValidForm(user);
     await user.click(screen.getByRole('button', { name: 'Send enquiry' }));
@@ -147,7 +161,10 @@ describe('enquiry form', () => {
   });
 
   it('shows a slow-server message during long requests', async () => {
-    vi.stubGlobal('fetch', vi.fn(() => new Promise(() => {})));
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() => new Promise(() => {})),
+    );
     const { user } = setup();
     await fillValidForm(user);
     vi.useFakeTimers({ shouldAdvanceTime: true });

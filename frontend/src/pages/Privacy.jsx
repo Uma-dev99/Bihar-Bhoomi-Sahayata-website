@@ -13,7 +13,9 @@ export default function Privacy() {
   return (
     <div className="container page page--narrow">
       <h1 className="page__title">{t('privacy.title')}</h1>
-      <p className="muted">{t('privacy.lastUpdated', { date: formatDate(PRIVACY_LAST_UPDATED, lang) })}</p>
+      <p className="muted">
+        {t('privacy.lastUpdated', { date: formatDate(PRIVACY_LAST_UPDATED, lang) })}
+      </p>
       {sections.map((section) => (
         <section key={section.heading}>
           <h2>{section.heading}</h2>

@@ -12,7 +12,13 @@ export default function About() {
 
       <div className="profile">
         {business.ownerPhoto ? (
-          <img className="profile__photo" src={business.ownerPhoto} alt={t('about.name')} width="160" height="160" />
+          <img
+            className="profile__photo"
+            src={business.ownerPhoto}
+            alt={t('about.name')}
+            width="160"
+            height="160"
+          />
         ) : (
           <div className="profile__photo profile__photo--placeholder">
             <span>{t('about.photoPlaceholder')}</span>
