@@ -47,13 +47,18 @@ Open http://localhost:5173/ — you will be sent to `/hi/` (or your saved langua
 
 ## 2. Pin dependencies (do this once, then whenever you upgrade)
 
-This project was written in an environment without package-registry access, so the exact
-versions could not be installed and recorded there. On your machine:
+`backend/requirements.txt` and `frontend/package-lock.json` are pinned and committed. To
+regenerate them:
+
+**Compile with Python 3.12**, the version Render runs (`PYTHON_VERSION` in `render.yaml`).
+Some packages only need a dependency on older Pythons (psycopg needs `typing-extensions` below
+3.13), so compiling under 3.13 would leave it unpinned in production. If your venv is 3.13,
+run pip-compile from a separate 3.12 environment that has pip-tools installed.
 
 ```bash
 # backend
 cd backend && source .venv/bin/activate
-pip-compile requirements.in -o requirements.txt     # writes exact versions of every package
+pip-compile --strip-extras --no-emit-index-url requirements.in -o requirements.txt   # exact versions
 pip install -r requirements.txt
 pytest                                               # must pass before you commit
 
