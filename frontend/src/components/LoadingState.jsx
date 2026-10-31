@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import '../styles/components/loading.css';
 
 export default function LoadingState({ label }) {
   const { t } = useTranslation();

@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { LANGUAGE_LABELS, LANGUAGES, storeLanguage, switchLanguagePath } from '../config/languages';
 import { useLang } from '../hooks/useLang';
+import '../styles/components/language-switcher.css';
 
 /**
  * Always-visible Hindi / English switch. Each option is a real link to the

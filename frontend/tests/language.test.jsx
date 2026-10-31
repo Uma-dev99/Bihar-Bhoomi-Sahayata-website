@@ -3,8 +3,8 @@ import { describe, expect, it } from 'vitest';
 import { STORAGE_KEY, switchLanguagePath } from '../src/config/languages';
 import { renderApp } from './helpers';
 
-const HI_HEADLINE = 'जमीन के कागजात समझिए, सही अगला कदम जानिए।';
-const EN_HEADLINE = 'Understand your land records. Know your next step.';
+const HI_HEADLINE = 'गया, बिहार में भूमि अभिलेख परामर्शदाता';
+const EN_HEADLINE = 'Land record consultant in Gaya, Bihar';
 
 describe('language behaviour', () => {
   it('defaults to Hindi on a first visit to /', async () => {
@@ -64,7 +64,7 @@ describe('language behaviour', () => {
     expect(location().pathname).toBe('/en/services/');
     expect(window.localStorage.getItem(STORAGE_KEY)).toBe('en');
     await waitFor(() => expect(document.documentElement.lang).toBe('en'));
-    expect(document.title).toBe('Services and fees – Bihar Bhoomi Sahayata');
+    expect(document.title).toBe('Land Record Services and Fees, Gaya – Bihar Bhoomi Sahayata');
     // No Hindi interface text left behind in the navigation.
     expect(screen.getByRole('navigation', { name: 'Main navigation' })).toHaveTextContent(
       'Services',

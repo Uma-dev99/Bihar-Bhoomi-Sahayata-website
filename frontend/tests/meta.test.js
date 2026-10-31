@@ -38,6 +38,43 @@ describe('SEO metadata', () => {
     expect(tags).not.toContain('<script>');
   });
 
+  it('keeps titles short enough for search results', () => {
+    for (const path of allPublicPaths()) {
+      expect(resolveMeta(path).title.length).toBeLessThanOrEqual(70);
+    }
+  });
+
+  it('adds a social image and Twitter card to every public page', () => {
+    for (const path of allPublicPaths()) {
+      const tags = headTags(resolveMeta(path));
+      expect(tags).toContain('property="og:image"');
+      expect(tags).toContain('name="twitter:card"');
+    }
+  });
+
+  it('describes the business to search engines without a phone number', () => {
+    const graph = resolveMeta('/en/').structuredData['@graph'];
+    const node = graph.find((n) => n['@type'] === 'ProfessionalService');
+    expect(node.address.addressLocality).toBe('Gaya');
+    expect(node.address.streetAddress).toContain('H.No 88');
+    expect(node.address.postalCode).toBe('823001');
+    expect(node.areaServed.map((a) => a.name)).toEqual(['Gaya', 'Bodh Gaya', 'Bihar']);
+    expect(node).not.toHaveProperty('telephone');
+  });
+
+  it('marks articles up with their real date and a breadcrumb', () => {
+    const meta = resolveMeta('/hi/articles/mutation-application-rejected/');
+    const types = meta.structuredData['@graph'].map((n) => n['@type']);
+    expect(types).toEqual(['Article', 'BreadcrumbList']);
+    expect(meta.modified).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(resolveMeta('/hi/').modified).toBeNull();
+  });
+
+  it('leaves structured data off pages with nothing to describe', () => {
+    expect(resolveMeta('/en/privacy/').structuredData).toBeNull();
+    expect(headTags(resolveMeta('/en/privacy/'))).not.toContain('ld+json');
+  });
+
   it('parses paths', () => {
     expect(parsePath('/hi/')).toEqual({ lang: 'hi', page: 'home' });
     expect(parsePath('/en/services/')).toEqual({ lang: 'en', page: 'services' });

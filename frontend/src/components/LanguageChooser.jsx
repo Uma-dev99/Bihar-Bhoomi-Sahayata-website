@@ -10,6 +10,7 @@ import {
 } from '../config/languages';
 import { getI18n } from '../i18n';
 import { useLang } from '../hooks/useLang';
+import '../styles/components/language-chooser.css';
 
 /**
  * First-visit prompt: shown until the visitor picks a language once.

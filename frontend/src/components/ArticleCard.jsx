@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { formatDate } from '../utils/dates';
 import { useLang } from '../hooks/useLang';
 import LangLink from './LangLink';
+import '../styles/components/article-card.css';
 
 export default function ArticleCard({ article, headingLevel = 3 }) {
   const { t } = useTranslation();

@@ -16,8 +16,20 @@ const { render, allPublicPaths, API_BASE_URL, SITE_URL } = await import(
   pathToFileURL(path.join(root, 'dist-ssr', 'entry-server.js')).href
 );
 
-if (/localhost|127\.0\.0\.1/.test(SITE_URL)) {
-  console.warn(`WARNING: VITE_SITE_URL is ${SITE_URL}. Set the real domain for production builds.`);
+// These addresses are written into every page, the sitemap, robots.txt and the
+// security headers, so a production build must never contain a local address.
+// "npm run build:local" passes --allow-local for trying the build on this computer.
+if (!process.argv.includes('--allow-local')) {
+  const settings = { VITE_SITE_URL: SITE_URL, VITE_API_BASE_URL: API_BASE_URL };
+  for (const [name, value] of Object.entries(settings)) {
+    if (!value.startsWith('https://') || /localhost|127\.0\.0\.1/.test(value)) {
+      console.error(
+        `Build stopped: ${name} is ${value}, but a production build needs the real https:// address. ` +
+          'To try the build on this computer instead, run "npm run build:local".',
+      );
+      process.exit(1);
+    }
+  }
 }
 
 function page(url) {
@@ -43,7 +55,6 @@ for (const url of paths) {
 write('index.html', page('/hi/'));
 write('404.html', page('/hi/page-not-found/'));
 
-const today = new Date().toISOString().slice(0, 10);
 const byPage = new Map();
 for (const url of paths) {
   const key = url.replace(/^\/(hi|en)\//, '/');
@@ -58,7 +69,10 @@ const entries = paths.map((url) => {
     )
     .join('\n');
   const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}${url.replace(/^\/en\//, '/hi/')}"/>`;
-  return `  <url>\n    <loc>${SITE_URL}${url}</loc>\n    <lastmod>${today}</lastmod>\n${alternates}\n${xDefault}\n  </url>`;
+  // A build is not a content change, so only real dates (articles) are listed.
+  const { modified } = render(url);
+  const lastmod = modified ? `    <lastmod>${modified}</lastmod>\n` : '';
+  return `  <url>\n    <loc>${SITE_URL}${url}</loc>\n${lastmod}${alternates}\n${xDefault}\n  </url>`;
 });
 write(
   'sitemap.xml',
@@ -75,6 +89,8 @@ const csp = [
   "style-src 'self'",
   "img-src 'self' data:",
   `connect-src 'self' ${apiOrigin}`,
+  // The map on the contact page.
+  'frame-src https://www.google.com',
   "font-src 'self'",
   "object-src 'none'",
   "base-uri 'self'",

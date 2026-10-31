@@ -1,0 +1,42 @@
+.lang-chooser {
+  background: var(--color-primary-dark);
+  color: #fff;
+}
+
+.lang-chooser__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.lang-chooser__title {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+.lang-chooser__text {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.lang-chooser__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.lang-chooser .button--secondary {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+.lang-chooser .button--primary {
+  background: var(--color-accent-light);
+  color: var(--color-text);
+}

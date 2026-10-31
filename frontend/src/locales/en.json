@@ -1,21 +1,22 @@
 {
   "meta": {
     "siteName": "Bihar Bhoomi Sahayata",
+    "imageAlt": "Bihar Bhoomi Sahayata – land record consultant in Gaya, Bihar",
     "home": {
-      "title": "Bihar Bhoomi Sahayata – Land record guidance in Gaya, Bihar",
-      "description": "Practical guidance on Jamabandi, Khata-Khesra, mutation paperwork and land-document discrepancies from a retired Senior UDC. Independent consultancy in Gaya, Bihar."
+      "title": "Land Record Consultant in Gaya, Bihar – Bihar Bhoomi Sahayata",
+      "description": "Independent guidance on Jamabandi, Khata-Khesra, Dakhil-Kharij (mutation) and land documents for Gaya, Bodh Gaya and all of Bihar, from a retired Senior UDC."
     },
     "services": {
-      "title": "Services and fees – Bihar Bhoomi Sahayata",
-      "description": "Consultation, Jamabandi review, mutation paperwork guidance and document discrepancy reports. Proposed fees, scope and limits explained clearly."
+      "title": "Land Record Services and Fees, Gaya – Bihar Bhoomi Sahayata",
+      "description": "Jamabandi review, Dakhil-Kharij (mutation) paperwork, land-document discrepancy reports and land-survey documents in Gaya, Bihar. Fees stated upfront."
     },
     "about": {
-      "title": "About the consultant – Bihar Bhoomi Sahayata",
-      "description": "Bameshwaar Singh, retired Senior UDC from the Bihar government, offers independent guidance on Bihar land records."
+      "title": "Bameshwaar Singh, Retired Senior UDC, Gaya – Bihar Bhoomi Sahayata",
+      "description": "Bameshwaar Singh, a retired Senior UDC of the Bihar government based in Gaya, offers independent guidance on Jamabandi, mutation and land records across Bihar."
     },
     "contact": {
-      "title": "Request a consultation – Bihar Bhoomi Sahayata",
-      "description": "Send your land-record question in Hindi or English. Based in Gaya, Bihar."
+      "title": "Contact a Land Record Consultant in Gaya – Bihar Bhoomi Sahayata",
+      "description": "Send your Jamabandi, Dakhil-Kharij or Khata-Khesra question in Hindi or English and we will call you back. Based in Gaya, Bihar. Working hours 9 am to 6 pm."
     },
     "privacy": {
       "title": "Privacy notice – Bihar Bhoomi Sahayata",
@@ -26,8 +27,8 @@
       "description": "Bihar Bhoomi Sahayata is an independent consultancy, not a government service, and does not give legal advice."
     },
     "articles": {
-      "title": "Land record articles – Bihar Bhoomi Sahayata",
-      "description": "Plain-language articles on Bihar Jamabandi, mutation and land-record numbers."
+      "title": "Bihar Land Record Articles – Bihar Bhoomi Sahayata",
+      "description": "Plain-language guides to Bihar Jamabandi, Khata-Khesra, Dakhil-Kharij (mutation) rejection and name discrepancies, from a land-record consultancy in Gaya."
     },
     "notFound": {
       "title": "Page not found – Bihar Bhoomi Sahayata",
@@ -37,7 +38,6 @@
   "common": {
     "skipToContent": "Skip to main content",
     "loading": "Loading…",
-    "toBeAnnounced": "To be announced",
     "readMore": "Read more",
     "bookConsultation": "Request a consultation",
     "independentNotice": "Independent consultancy. Not a government office and not affiliated with the Government of Bihar.",
@@ -63,8 +63,8 @@
     "closeMenu": "Close menu"
   },
   "home": {
-    "headline": "Understand your land records. Know your next step.",
-    "intro": "Practical guidance on Jamabandi, Khata-Khesra, mutation paperwork and land-document discrepancies.",
+    "headline": "Land record consultant in Gaya, Bihar",
+    "intro": "Understand your land records and know your next step: practical guidance on Jamabandi, Khata-Khesra, Dakhil-Kharij (mutation) paperwork and land-document discrepancies, for Gaya, Bodh Gaya and all of Bihar.",
     "heroNote": "From a retired Senior UDC of the Bihar government, now working as an independent consultant in Gaya.",
     "secondaryCta": "See services and fees",
     "servicesTitle": "How we can help",
@@ -114,7 +114,7 @@
     "articlesTitle": "Learn about land records",
     "allArticles": "All articles",
     "contactTitle": "Have a question about your land papers?",
-    "contactText": "Send an enquiry in Hindi or English. Based in Gaya, Bihar; guidance available for land anywhere in Bihar."
+    "contactText": "Send an enquiry in Hindi or English. Based in Gaya, Bihar; guidance available for Bodh Gaya, nearby districts and land anywhere in Bihar."
   },
   "services": {
     "title": "Services and fees",
@@ -189,7 +189,9 @@
     "intro": "Tell us briefly about your land-record question. We will call you back to understand it and confirm the service and fee.",
     "detailsTitle": "Contact details",
     "location": "Location",
-    "locationValue": "Gaya, Bihar",
+    "locationValue": "H.No 88, AP Colony, Near Hanuman Mandir, Gaya, Bihar – 823001",
+    "mapTitle": "Map showing the location of Bihar Bhoomi Sahayata in Gaya",
+    "mapLink": "Open in Google Maps",
     "phone": "Phone",
     "whatsapp": "WhatsApp",
     "whatsappLink": "Message on WhatsApp",
@@ -276,7 +278,7 @@
       {
         "heading": "Correction and deletion",
         "paragraphs": [
-          "You can ask us to correct or delete your enquiry by contacting us using the details on the contact page. We will confirm once it is done."
+          "You can ask us to correct or delete your enquiry by sending a request through the enquiry form on the contact page. We will confirm once it is done."
         ]
       },
       {
@@ -286,9 +288,15 @@
         ]
       },
       {
+        "heading": "Google Maps",
+        "paragraphs": [
+          "The contact page shows a map from Google Maps. When the map loads, your browser connects to Google, which receives your internet (IP) address and may set its own cookies under Google's privacy policy. We do not receive this information."
+        ]
+      },
+      {
         "heading": "Language preference",
         "paragraphs": [
-          "Your browser stores your language choice (Hindi or English) so the site opens in that language next time. This website does not use advertising or analytics cookies."
+          "Your browser stores your language choice (Hindi or English) so the site opens in that language next time. Apart from the Google map described above, this website does not use advertising or analytics cookies."
         ]
       }
     ]

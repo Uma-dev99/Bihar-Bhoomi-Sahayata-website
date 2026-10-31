@@ -1,0 +1,28 @@
+.breadcrumb {
+  font-weight: 600;
+}
+
+.article__meta {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.article__sources {
+  margin-top: 32px;
+  border-top: 1px solid var(--color-border);
+}
+
+.article__disclaimer {
+  font-size: 0.95rem;
+}
+
+.cta-box {
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--color-success-bg);
+}
+
+.cta-box h2 {
+  margin-top: 0;
+}

@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { formatINR } from '../config/languages';
 import { useLang } from '../hooks/useLang';
 import LangLink from './LangLink';
+import '../styles/components/service-card.css';
 
 /** One service. `detailed` adds scope, deliverable and limits (Services page). */
 export default function ServiceCard({ service, detailed = false, headingLevel = 3 }) {

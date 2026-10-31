@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import LangLink from './LangLink';
+import '../styles/components/footer.css';
 
 export default function Footer() {
   const { t } = useTranslation();

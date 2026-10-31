@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import '../styles/pages/disclaimer.css';
 
 export default function Disclaimer() {
   const { t } = useTranslation();

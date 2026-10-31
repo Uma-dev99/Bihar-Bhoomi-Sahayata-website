@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import LangLink from './LangLink';
 import LanguageSwitcher from './LanguageSwitcher';
 import Logo from './Logo';
+import '../styles/components/header.css';
 
 const NAV_ITEMS = ['home', 'services', 'articles', 'about', 'contact'];
 

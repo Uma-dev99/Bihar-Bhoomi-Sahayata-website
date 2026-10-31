@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import LangLink from '../components/LangLink';
 import { business } from '../config/business';
+import '../styles/pages/about.css';
 
 export default function About() {
   const { t } = useTranslation();

@@ -21,5 +21,5 @@ export function render(url) {
     </StrictMode>,
   );
   const meta = resolveMeta(url);
-  return { html, head: headTags(meta), lang: meta.lang };
+  return { html, head: headTags(meta), lang: meta.lang, modified: meta.modified };
 }

@@ -101,10 +101,19 @@ describe('routing', () => {
     expect(screen.getByLabelText(/^Service/)).toHaveValue('mutation');
   });
 
-  it('shows placeholders instead of invented contact details', () => {
+  it('shows working hours but no phone or WhatsApp while they are unpublished', () => {
     renderApp('/en/contact/');
-    expect(screen.getAllByText('To be announced').length).toBeGreaterThanOrEqual(3);
+    expect(screen.getByText('9 am – 6 pm')).toBeInTheDocument();
+    expect(screen.queryByText('Phone')).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /whatsapp/i })).not.toBeInTheDocument();
+  });
+
+  it('shows the address with a Google map of it', () => {
+    renderApp('/en/contact/');
+    expect(screen.getByText(/H\.No 88, AP Colony.*823001/)).toBeInTheDocument();
+    const map = screen.getByTitle(/^Map showing/);
+    expect(map.getAttribute('src')).toMatch(/^https:\/\/www\.google\.com\/maps\?q=A%20P%20Colony/);
+    expect(screen.getByRole('link', { name: /Open in Google Maps/ })).toBeInTheDocument();
   });
 });
 

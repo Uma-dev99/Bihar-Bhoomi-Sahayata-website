@@ -1,0 +1,18 @@
+.page {
+  padding-top: clamp(24px, 5vw, 48px);
+  padding-bottom: clamp(40px, 6vw, 72px);
+}
+
+.page--narrow {
+  max-width: 780px;
+}
+
+.page__title {
+  margin-top: 0;
+}
+
+.page__intro {
+  font-size: 1.15rem;
+  color: var(--color-muted);
+  max-width: 70ch;
+}

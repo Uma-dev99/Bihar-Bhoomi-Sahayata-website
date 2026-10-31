@@ -1,0 +1,21 @@
+.lang-switch {
+  display: inline-flex;
+  border: 2px solid var(--color-primary);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lang-switch__option {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 4px 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.lang-switch__option.is-active {
+  background: var(--color-primary);
+  color: #fff;
+}

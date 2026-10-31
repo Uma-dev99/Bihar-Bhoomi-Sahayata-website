@@ -9,6 +9,7 @@ import { useLang } from '../hooks/useLang';
 import { LIMITS, mapServerErrors, validateEnquiry } from '../utils/validation';
 import LangLink from './LangLink';
 import LoadingState from './LoadingState';
+import '../styles/components/enquiry-form.css';
 
 const FIELD_ORDER = [
   'name',

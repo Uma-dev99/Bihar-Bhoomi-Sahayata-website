@@ -3,7 +3,7 @@ import { useLang } from '../hooks/useLang';
 import { formatDate } from '../utils/dates';
 
 // Update this date whenever the privacy notice text changes.
-export const PRIVACY_LAST_UPDATED = '2026-10-29';
+export const PRIVACY_LAST_UPDATED = '2026-10-31';
 
 export default function Privacy() {
   const { t } = useTranslation();

@@ -1,0 +1,25 @@
+.article-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.article-card__title {
+  margin-top: 0;
+}
+
+.article-card__title a {
+  text-decoration: none;
+}
+
+.article-card__title a:hover {
+  text-decoration: underline;
+}
+
+.article-card__meta {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin: 0;
+}

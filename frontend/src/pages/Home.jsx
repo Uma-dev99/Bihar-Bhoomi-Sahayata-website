@@ -4,6 +4,7 @@ import LangLink from '../components/LangLink';
 import ServiceCard from '../components/ServiceCard';
 import { articles } from '../content/articles';
 import { services } from '../content/services';
+import '../styles/pages/home.css';
 
 export default function Home() {
   const { t } = useTranslation();

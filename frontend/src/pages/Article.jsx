@@ -5,6 +5,7 @@ import { getArticle } from '../content/articles';
 import { useLang } from '../hooks/useLang';
 import { formatDate } from '../utils/dates';
 import NotFound from './NotFound';
+import '../styles/pages/article.css';
 
 function Block({ block }) {
   switch (block.type) {
